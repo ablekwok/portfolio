@@ -33,15 +33,16 @@
     
     const db = getDatabase();
     
-    function Insert(){
-    set(ref(db, "UserList/"+userid),{
-      Name: myname,
-      password: 123
-    });
-    }
+function writeUserData(userId, name, email) {
+  const db = getDatabase();
+  set(ref(db, 'users/' + "userId"), {
+    username: "name",
+    email: "email",
+  });
+}
   
   var Button = document.getElementById("btn");
-  Button.addEventListener('click', Insert);
+  Button.addEventListener('click', writeUserData);
   </script>
 
 </html>
