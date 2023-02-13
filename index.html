@@ -30,14 +30,16 @@
     const app = initializeApp(firebaseConfig);
     
     import {getDatabase, ref, set, child, update, remove} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js"
-    import {getAuth, connectAuthEmulator, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
-    
+  
+	import {getAuth, signInWithEmailAndPassword} from "https://www.gstatic.com/firebasejs/9.17.1/firebase-auth.js";
+	
     const db = getDatabase();
-    const auth = getAuth(firebaseApp);
-	connectAuthEmulator(auth, "https://ablekwok.github.io/portfolio/");
-    
-    signInWithEmailAndPassword(auth, "hk-vmt@hkbu.edu.hk", "HK-vmt001");
-	console.log(userCredential.user);
+	
+	const auth = getAuth();
+	
+	
+	signInWithEmailAndPassword(auth, "hk-vmt@hkbu.edu.hk", "HK-vmt001");
+	
     
 function writeUserData(userId, name, email) {
   const db = getDatabase();
